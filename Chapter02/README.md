@@ -31,27 +31,27 @@ def GATE(x1, x2):
 |XOR   |?     |?     |?     |
 
 These are some of the possible combinations. Try to think about the XOR gate (which is true when x1 and x2 are different). It is not possible with a single perceptron because perceptron can be expressed as
-$$
+```math
 f(x)=
 \begin{cases}
 0 & \text{(} w_1x_1 + w_2x_2 + b \leq 0 \text{)}\\
 1 & \text{(} w_1x_1 + w_2x_2 + b > 0 \text{)}
 \end{cases}
-$$
+```
 ![why XOR gate is impossible](imgs/image.png)
 As you can see, perceptron is a linear function of x1 and x2. So we need to use multiple perceptrons. We can make XOR gate with AND, NAND, OR gates. 
-$$
+```math
 XOR(x_1, x_2) = AND(NAND(x_1, x_2), OR(x_1, x_2))
-$$
+```
 Now we solved a nonlinear problem with linear functions. We can adapt this to many situations
 
 ## It's possible to make computer with NAND gate
 With basic gates(AND, OR, NOT), every computers can be made. And, NAND can make AND and OR gates
-$$
+```math
 \begin{aligned}
 NOT(x)          &= NAND(x, x)& \\
 AND(x_1, x_2)   &= NAND(NAND(x_1, x_2), NAND(x_1, x_2)) \\
 OR(x_1, x_2)    &= NAND(NAND(x_1, x_1), NAND(x_2, x_2))
 \end{aligned}
-$$
+```
 Theoretically, It's possible to make any computer only with NAND.
